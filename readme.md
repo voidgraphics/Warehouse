@@ -29,8 +29,8 @@ You will need to download the NW.js executable for your operating system at [nwj
 
 Many, many things.
 
-- [] Saving your settings using localStorage
-- [] Make a proper design for it
-- [] Give an option to enable a full-featured FTP interface
-- [] Auto-copy url to clipboard (+ option to turn it off) for easy sharing
+- [ ] Saving your settings using localStorage
+- [ ] Make a proper design for it
+- [ ] Give an option to enable a full-featured FTP interface
+- [ ] Auto-copy url to clipboard (+ option to turn it off) for easy sharing
 - And more to come as I think of new things.
