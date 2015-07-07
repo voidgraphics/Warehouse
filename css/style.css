@@ -1,0 +1,36 @@
+html{
+	font-family: sans-serif;
+}
+
+body{
+	height: 100%;
+	widht: 100%;
+	-webkit-app-region: drag;
+}
+
+#drop{
+	-webkit-app-region: drag;
+	-webkit-user-select: none;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	border-radius: 6px;
+	border: 3px dashed #CCC;
+	text-align: center;
+	font-size: 18px;
+	color: #CCC;
+	transition: all .4s;
+
+	display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column; /* column | row */
+}
+
+#drop:hover{
+	color: #8dd0ff;
+	border-color: #8dd0ff;
+}
+

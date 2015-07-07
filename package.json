@@ -1,0 +1,14 @@
+{
+	"name": "Warehouse",
+	"main": "index.html",
+	"window": {
+		"toolbar": false,
+		"height": 200,
+		"width": 200,
+		"frame": false,
+		"show_in_taskbar": false
+	},
+	"dependencies": {
+		"jsftp": "1.5.2"
+	}
+}

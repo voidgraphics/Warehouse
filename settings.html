@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Warehouse - Settings</title>
+		<link rel="stylesheet" type="text/css" href="css/settings.css">
+	</head>
+	<body>
+		<button id="close">x</button>
+		<form>
+			<div>
+				<label for="host">Host</label>
+				<input type="text" name="host" id="host" required />
+				<label for="port">Port</label>
+				<input type="number" name="port" id="port" placeholder="defaults to 21" />
+				<label for="username">Username</label>
+				<input type="text" name="username" id="username" required />
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" required />
+				<label for="path">Upload folder path</label>
+				<input type="text" name="path" id="path" placeholder="defaults to /upload/" />
+				<input type="submit" value="save" id="save" />
+			</div>
+		</form>
+		<script type="text/javascript" src="js/settings.js"></script>
+	</body>
+</html>
