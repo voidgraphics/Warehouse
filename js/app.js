@@ -73,12 +73,11 @@
 			global.Ftp.put( file, global.ftp_config.uploadPath + e.dataTransfer.files[i].name, function( error ) {
 				if ( error ) {
 					console.error( error );
+					oDropbox.innerHTML = "Error.";
 				}
 				else {
 					oDropbox.innerHTML = "Success!";
-					
 					oSuccessAudio.play();
-
 				} 
 			});
 		}
