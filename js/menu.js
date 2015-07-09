@@ -29,9 +29,9 @@
 		checked: false,
 		click: function(){
 			if( this.checked ){
-				global.enableClipboard();
+				global.bIsClipBoardEnabled = true;
 			} else {
-				global.disableClipboard();
+				global.bIsClipBoardEnabled = false;
 			}
 		}
 	} ) );

@@ -5,8 +5,9 @@
 	// Main app
 
 	var JSFtp = require( "jsftp" ),
-		oSuccessAudio = new Audio( "sound/boop.ogg" ),
-		bIsClipBoardEnabled = false;
+		oSuccessAudio = new Audio( "sound/boop.ogg" );
+
+	global.bIsClipBoardEnabled = false;
 
 	var gui = require('nw.gui');
 	var clipboard = gui.Clipboard.get();
@@ -52,13 +53,6 @@
 		return false;
 	};
 
-	global.enableClipboard = function(){
-		bIsClipBoardEnabled = true;
-	}
-	global.disableClipboard = function(){
-		bIsClipBoardEnabled = false;
-	}
-
 	var revert = function(){
 		setTimeout( function(){
 			oDropbox.innerHTML = sInitialText;
@@ -99,7 +93,7 @@
 					console.log( "File uploaded successfully" );
 					oDropbox.innerHTML = "Success!";
 					oSuccessAudio.play();
-					if( bIsClipBoardEnabled ){
+					if( global.bIsClipBoardEnabled ){
 						clipboard.set( global.ftp_config.publicLink + file_name, "text" );
 					}
 					revert();
