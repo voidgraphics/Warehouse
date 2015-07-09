@@ -3,6 +3,7 @@ html{
 }
 
 #close{
+	-webkit-app-region: no-drag;
 	display: block;
 	width: 21px;
 	height: 21px;
@@ -45,6 +46,7 @@ label{
 }
 
 input{
+	-webkit-app-region: no-drag;
 	margin-bottom: 15px;
 	padding: 5px;
 	border: 1px solid #ccc;
