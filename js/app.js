@@ -13,12 +13,12 @@
 	var clipboard = gui.Clipboard.get();
 
 	global.ftp_config = {
-		host: null,
-		port: 21,
-		username: null,
-		password: null,
-		uploadPath: "/upload/",
-		publicLink: ""
+		host: localStorage.getItem( "host" ),
+		port: localStorage.getItem( "port" ),
+		username: localStorage.getItem( "username" ),
+		password: localStorage.getItem( "password" ),
+		uploadPath: localStorage.getItem( "uploadPath" ),
+		publicLink: localStorage.getItem( "publicLink" )
 	};
 
 	var checkConfig = function(){

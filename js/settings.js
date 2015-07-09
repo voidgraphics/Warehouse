@@ -15,6 +15,9 @@
 		var password = document.querySelector( "#password" ).value;
 		var path = document.querySelector( "#path" ).value;
 		var link = document.querySelector( "#link" ).value;
+		var remember = document.querySelector( "#remember" ).checked;
+
+		console.log( "remember: " + remember );
 
 		var bHostOK = ( host !== "" ) ? true : false;
 		var bUsernameOK = ( username !== "" ) ? true : false;
@@ -24,6 +27,16 @@
 
 		if( bHostOK && bUsernameOK && bPasswordOK ){
 			console.log( "everything ok" );
+
+			if( remember ){
+				localStorage.setItem( "host", host );
+				localStorage.setItem( "port", port );
+				localStorage.setItem( "username", username );
+				localStorage.setItem( "password", password );
+				localStorage.setItem( "uploadPath", path );
+				localStorage.setItem( "publicLink", link );
+			}
+
 			global.ftp_config.host = host;
 			global.ftp_config.port = port;
 			global.ftp_config.username = username;
