@@ -14,7 +14,7 @@ True. However if you're like me and you store a lot of your files on your server
 ###How does it work?
 Very easy: just launch the app and drag/drop your file to the small window.  
 However you will have to configure it the first time to specify your server info.
-You can modify that info at any time by right-clicking on the tray item and selecting "Change server settings". There's an option in the tray menu to automatically copy the public link to the file to your clipboard once the upload is done, so you can easily share the file.   
+You can modify that info at any time by right-clicking on the tray item or inside the drop area and selecting "Change server settings". There's an option in the tray menu to automatically copy the public link to the file to your clipboard once the upload is done, so you can easily share the file.   
 You can leave the app running in the background so you don't have to re-open it everytime. There's options in the tray menu to show and hide the drop area.    
 You can also resize the drop area by dragging from the edges to make it as big or small as you want.
 
