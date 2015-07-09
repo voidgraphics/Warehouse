@@ -86,4 +86,10 @@
 		} );
 	};
 
+	document.body.addEventListener( 'contextmenu', function( e ) { 
+	  e.preventDefault();
+	  menu.popup( e.x, e.y );
+	  return false;
+	} );
+
 }) ();
