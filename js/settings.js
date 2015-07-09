@@ -14,6 +14,7 @@
 		var username = document.querySelector( "#username" ).value;
 		var password = document.querySelector( "#password" ).value;
 		var path = document.querySelector( "#path" ).value;
+		var link = document.querySelector( "#link" ).value;
 
 		var bHostOK = ( host !== "" ) ? true : false;
 		var bUsernameOK = ( username !== "" ) ? true : false;
@@ -28,6 +29,7 @@
 			global.ftp_config.username = username;
 			global.ftp_config.password = password;
 			global.ftp_config.uploadPath = path;
+			global.ftp_config.publicLink = link;
 			global.ftp_connect();
 		} else {
 			console.error( "missing info" );
