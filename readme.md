@@ -14,9 +14,9 @@ True. However if you're like me and you store a lot of your files on your server
 ###How does it work?
 Very easy: just launch the app and drag/drop your file to the small window.  
 However you will have to configure it the first time to specify your server info.
-To do that, right-click on the tray item and select "Change server settings".  
-You can leave it running in the background so you don't have to re-open the app everytime. There's options in the tray menu to show and hide the app.  
-You can also resize it by dragging from the edges to make it as big or small as you want.
+You can modify that info at any time by right-clicking on the tray item and selecting "Change server settings". There's an option in the tray menu to automatically copy the public link to the file to your clipboard once the upload is done, so you can easily share the file.   
+You can leave the app running in the background so you don't have to re-open it everytime. There's options in the tray menu to show and hide the drop area.    
+You can also resize the drop area by dragging from the edges to make it as big or small as you want.
 
 ###What's the tech behind it?
 This app is built with [NW.js](https://github.com/nwjs/nw.js) (formerly known as node-webkit) and [jsftp](https://github.com/sergi/jsftp).  
@@ -32,5 +32,7 @@ Many, many things.
 - [ ] Saving your settings using localStorage
 - [ ] Make a proper design for it
 - [ ] Give an option to enable a full-featured FTP interface
-- [ ] Auto-copy url to clipboard (+ option to turn it off) for easy sharing
+- [ ] Give an option to always keep the drop area on top of other windows
+- [x] Auto-copy url to clipboard (+ option to turn it off) for easy sharing
+
 - And more to come as I think of new things.
