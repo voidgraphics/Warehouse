@@ -5,14 +5,19 @@
 	// Main app
 
 	var JSFtp = require( "jsftp" ),
-		oSuccessAudio = new Audio( "sound/boop.ogg" );
+		oSuccessAudio = new Audio( "sound/boop.ogg" ),
+		bIsClipBoardEnabled = false;
+
+	var gui = require('nw.gui');
+	var clipboard = gui.Clipboard.get();
 
 	global.ftp_config = {
 		host: null,
 		port: 21,
 		username: null,
 		password: null,
-		uploadPath: "/upload/"
+		uploadPath: "/upload/",
+		publicLink: ""
 	};
 
 	var checkConfig = function(){
@@ -47,6 +52,13 @@
 		return false;
 	};
 
+	global.enableClipboard = function(){
+		bIsClipBoardEnabled = true;
+	}
+	global.disableClipboard = function(){
+		bIsClipBoardEnabled = false;
+	}
+
 	var revert = function(){
 		setTimeout( function(){
 			oDropbox.innerHTML = sInitialText;
@@ -75,8 +87,9 @@
 
 		oDropbox.innerHTML = "Uploading " + e.dataTransfer.files.length + string;
 		for( var i = 0; i < e.dataTransfer.files.length; i++ ){
-			var file = e.dataTransfer.files[i].path;
-			global.Ftp.put( file, global.ftp_config.uploadPath + e.dataTransfer.files[i].name, function( error ) {
+			var file_path = e.dataTransfer.files[i].path;
+			var file_name = e.dataTransfer.files[i].name
+			global.Ftp.put( file_path, global.ftp_config.uploadPath + file_name, function( error ) {
 				if ( error ) {
 					console.error( error );
 					oDropbox.innerHTML = "Error.";
@@ -86,6 +99,9 @@
 					console.log( "File uploaded successfully" );
 					oDropbox.innerHTML = "Success!";
 					oSuccessAudio.play();
+					if( bIsClipBoardEnabled ){
+						clipboard.set( global.ftp_config.publicLink + file_name, "text" );
+					}
 					revert();
 				} 
 			});
