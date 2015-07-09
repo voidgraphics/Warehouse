@@ -25,7 +25,7 @@
 	global.ftp_connect = function(){
 		global.Ftp = new JSFtp({
 		  host: global.ftp_config.host,
-		  port: global.ftp_config.port,
+		  port: global.ftp_config.port
 		});
 
 		global.Ftp.auth( global.ftp_config.username, global.ftp_config.password, function(){
@@ -45,6 +45,12 @@
 	var preventOpeningOfFile = function( e ){
 		e.preventDefault();
 		return false;
+	};
+
+	var revert = function(){
+		setTimeout( function(){
+			oDropbox.innerHTML = sInitialText;
+		}, 2000 );
 	};
 
 	var oDropbox = document.querySelector( "#drop" );
@@ -74,10 +80,13 @@
 				if ( error ) {
 					console.error( error );
 					oDropbox.innerHTML = "Error.";
+					revert();
 				}
 				else {
+					console.log( "File uploaded successfully" );
 					oDropbox.innerHTML = "Success!";
 					oSuccessAudio.play();
+					revert();
 				} 
 			});
 		}
