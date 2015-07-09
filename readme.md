@@ -35,4 +35,4 @@ Many, many things.
 - [x] ~~Give an option to always keep the drop area on top of other windows~~
 - [x] ~~Auto-copy url to clipboard (+ option to turn it off) for easy sharing~~
 
-- And more to come as I think of new things.
+And more to come as I think of new things.
