@@ -32,7 +32,7 @@ Many, many things.
 - [ ] Saving your settings using localStorage
 - [ ] Make a proper design for it
 - [ ] Give an option to enable a full-featured FTP interface
-- [ ] Give an option to always keep the drop area on top of other windows
+- [x] ~~Give an option to always keep the drop area on top of other windows~~
 - [x] ~~Auto-copy url to clipboard (+ option to turn it off) for easy sharing~~
 
 - And more to come as I think of new things.

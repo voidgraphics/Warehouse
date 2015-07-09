@@ -39,6 +39,19 @@
 	menu.append( new gui.MenuItem( { type: "separator" } ) );
 
 	menu.append( new gui.MenuItem( { 
+		label: "Always on top",
+		type: "checkbox",
+		checked: false,
+		click: function(){
+			if( this.checked ){
+				win.setAlwaysOnTop( true );
+			} else {
+				win.setAlwaysOnTop( false );
+			}
+		}
+	} ) );
+
+	menu.append( new gui.MenuItem( { 
 		label: "Hide window",
 		click: function(){
 			win.hide();
