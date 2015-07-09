@@ -49,6 +49,7 @@ input{
 	-webkit-app-region: no-drag;
 	margin-bottom: 15px;
 	padding: 5px;
+	width: 200px;
 	border: 1px solid #ccc;
 }
 
@@ -63,6 +64,7 @@ input:-webkit-autofill {
 
 input[type="submit"]{
 	padding:8px 15px 10px;
+	width: 60px;
 	border-radius: 5px;
 	border: none;
 	background-color: #8dd0ff;
