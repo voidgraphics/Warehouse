@@ -34,11 +34,12 @@ form{
 }
 
 label, input{
-	display: block;
+	-webkit-app-region: no-drag;
 	margin: 0 auto;
 }
 
 label{
+	display: inline-block;
 	-webkit-user-select: none;
 	margin-bottom: 5px;
 	vertical-align: center;
@@ -46,7 +47,7 @@ label{
 }
 
 input{
-	-webkit-app-region: no-drag;
+	display:block;
 	margin-bottom: 15px;
 	padding: 5px;
 	width: 200px;
@@ -62,9 +63,16 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
+input[type="checkbox"], input[type="checkbox"] + label{
+	display:inline-block;
+	width: auto;
+	margin: 2px;
+}
+
 input[type="submit"]{
 	padding:8px 15px 10px;
 	width: 60px;
+	margin-top: 15px;
 	border-radius: 5px;
 	border: none;
 	background-color: #8dd0ff;
