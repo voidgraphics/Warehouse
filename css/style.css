@@ -4,7 +4,7 @@ html{
 
 body{
 	height: 100%;
-	widht: 100%;
+	width: 100%;
 	-webkit-app-region: drag;
 }
 
@@ -22,7 +22,6 @@ body{
 	font-size: 18px;
 	color: #CCC;
 	transition: all .4s;
-
 	display: flex;
     justify-content:center;
     align-content:center;
@@ -33,4 +32,3 @@ body{
 	color: #8dd0ff;
 	border-color: #8dd0ff;
 }
-
