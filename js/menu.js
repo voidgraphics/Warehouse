@@ -5,7 +5,7 @@
 	// Getting a reference to the window.
 	var gui = require( "nw.gui" );
 	var win = gui.Window.get();
-
+	win.show();
 	// Creating the tray object
 	var tray = new gui.Tray( { icon: "img/icon.png" } );
 	tray.tooltip = "Warehouse";
@@ -85,11 +85,12 @@
 
 	tray.menu = menu;
 
+
 	global.openConfig = function(){
 		var settings_win = gui.Window.open( 'settings.html', {
 			"position": "center",
 			"width": 300,
-			"height": 450,
+			"height": 480,
 			"toolbar": false,
 			"frame": false
 		} );
