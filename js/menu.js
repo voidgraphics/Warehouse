@@ -13,12 +13,30 @@
 	// Populating the menu
 	var menu = new gui.Menu();
 
+	menu.append( new gui.MenuItem( { enabled: false, label: "Warehouse" } ) );
+	menu.append( new gui.MenuItem( { type: "separator" } ) );
+
 	menu.append( new gui.MenuItem( { 
 		label: "Change server settings",
 		click: function(){
 			global.openConfig();
 		}
 	} ) );
+
+	menu.append( new gui.MenuItem( { 
+		label: "Copy link to clipboard",
+		type: "checkbox",
+		checked: false,
+		click: function(){
+			if( this.checked ){
+				global.enableClipboard();
+			} else {
+				global.disableClipboard();
+			}
+		}
+	} ) );
+
+	menu.append( new gui.MenuItem( { type: "separator" } ) );
 
 	menu.append( new gui.MenuItem( { 
 		label: "Hide window",
@@ -34,6 +52,8 @@
 		}
 	} ) );
 
+	menu.append( new gui.MenuItem( { type: "separator" } ) );
+
 	menu.append( new gui.MenuItem( { 
 		label: "Quit",
 		click: function(){
@@ -47,7 +67,7 @@
 		var settings_win = gui.Window.open( 'settings.html', {
 			"position": "center",
 			"width": 300,
-			"height": 400,
+			"height": 450,
 			"toolbar": false,
 			"frame": false
 		} );
