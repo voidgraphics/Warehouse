@@ -30,6 +30,7 @@ You will need to download the NW.js executable for your operating system at [nwj
 Many, many things.
 
 - [x] ~~Remembering your settings using localStorage~~
+- [ ] sftp support
 - [ ] Make a proper design for it
 - [ ] Give an option to enable a full-featured FTP interface
 - [x] ~~Give an option to always keep the drop area on top of other windows~~
