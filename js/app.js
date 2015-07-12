@@ -55,43 +55,42 @@
 
 	var revert = function(){
 		setTimeout( function(){
-			oDropbox.innerHTML = sInitialText;
+			oDropbox.className = "";
 		}, 2000 );
 	};
 
 	var oDropbox = document.querySelector( "#drop" );
-	var sInitialText = oDropbox.innerHTML;
 
 	oDropbox.addEventListener( "dragover", function(){
 		this.className = "hover";
-		this.innerHTML = "Drop the file";
+		this.firstChild.src = "img/send_arrow_active.svg";
 		return false;
 	} );
 
 	oDropbox.addEventListener( "dragleave", function(){
 		this.className = "";
-		this.innerHTML = sInitialText;
 		return false;
 	} );
 
 	oDropbox.addEventListener( "drop", function( e ){
 		e.preventDefault();
+		oDropbox.className = "";
 
-		var string = e.dataTransfer.files.length > 1 ? " files" : " file";
-
-		oDropbox.innerHTML = "Uploading " + e.dataTransfer.files.length + string;
 		for( var i = 0; i < e.dataTransfer.files.length; i++ ){
 			var file_path = e.dataTransfer.files[i].path;
 			var file_name = e.dataTransfer.files[i].name
+
+			oDropbox.className = "loading";
+
 			global.Ftp.put( file_path, global.ftp_config.uploadPath + file_name, function( error ) {
 				if ( error ) {
 					console.error( error );
-					oDropbox.innerHTML = "Error.";
+					oDropbox.className = "error";
 					revert();
 				}
 				else {
 					console.log( "File uploaded successfully" );
-					oDropbox.innerHTML = "Success!";
+					oDropbox.className = "success";
 					oSuccessAudio.play();
 					if( global.bIsClipBoardEnabled ){
 						clipboard.set( global.ftp_config.publicLink + file_name, "text" );

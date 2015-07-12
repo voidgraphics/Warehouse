@@ -21,14 +21,37 @@ body{
 	text-align: center;
 	font-size: 18px;
 	color: #CCC;
-	transition: all .4s;
 	display: flex;
     justify-content:center;
     align-content:center;
-    flex-direction:column; /* column | row */
+    flex-direction:column;
 }
 
-#drop:hover{
-	color: #8dd0ff;
-	border-color: #8dd0ff;
+#drop:hover, .hover{
+	color: #fff;
+	border-color: #55c2e4;
+}
+
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+
+.hover > img{
+	content: url("../img/send_arrow_active.svg");
+}
+
+.success > img{
+	content: url("../img/success.svg");
+}
+
+.error > img{
+	content: url("../img/error.svg");
+}
+
+.loading > img{
+	content: url("../img/loading.svg");
+	-webkit-animation: spin 1s linear infinite;
+}
+
+img{
+	display: block;
+	margin: 0 auto;
 }
