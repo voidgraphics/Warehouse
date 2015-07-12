@@ -59,11 +59,17 @@
 
 	};
 
+	// Allow copy/paste by activating the default menu
 	var mb = new gui.Menu( {type: 'menubar'} );
 	mb.createMacBuiltin( 'RoboPaint', {
 		hideEdit: false,
 	} );
 	win.menu = mb;
+
+	// Prevent multiple tray icons when refreshing
+	window.onbeforeunload = function(){
+		tray.remove();
+	};
 
 	var oSubmitBtn = document.querySelector( "#save" );
 	oSubmitBtn.addEventListener( "click", saveData );
