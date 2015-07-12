@@ -59,6 +59,12 @@
 
 	};
 
+	var mb = new gui.Menu( {type: 'menubar'} );
+	mb.createMacBuiltin( 'RoboPaint', {
+		hideEdit: false,
+	} );
+	win.menu = mb;
+
 	var oSubmitBtn = document.querySelector( "#save" );
 	oSubmitBtn.addEventListener( "click", saveData );
 	var oCloseBtn = document.querySelector( "#close" );
