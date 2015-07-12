@@ -85,6 +85,10 @@
 
 	tray.menu = menu;
 
+	// Prevent multiple tray icons when refreshing
+	window.addEventListener( "beforeunload", function(){
+		tray.remove();
+	} );
 
 	global.openConfig = function(){
 		var settings_win = gui.Window.open( 'settings.html', {

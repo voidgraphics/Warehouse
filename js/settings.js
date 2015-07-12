@@ -66,10 +66,6 @@
 	} );
 	win.menu = mb;
 
-	// Prevent multiple tray icons when refreshing
-	window.onbeforeunload = function(){
-		tray.remove();
-	};
 
 	var oSubmitBtn = document.querySelector( "#save" );
 	oSubmitBtn.addEventListener( "click", saveData );
