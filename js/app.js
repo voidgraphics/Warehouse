@@ -37,6 +37,7 @@
 		global.Ftp.auth( global.ftp_config.username, global.ftp_config.password, function(){
 			console.log( "Authenticated: " + global.Ftp.authenticated );
 			if( global.Ftp.authenticated ){
+				global.updateStatus();
 				oSuccessAudio.play();
 			}
 		} );

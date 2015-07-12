@@ -90,6 +90,12 @@
 		tray.remove();
 	} );
 
+	global.updateStatus = function(){
+		menu.insert( new gui.MenuItem( { type: "separator" } ), 1 );
+		menu.insert( new gui.MenuItem( { enabled: false, label: "Connected to:" } ), 2 );
+		menu.insert( new gui.MenuItem( { enabled: false, label: global.ftp_config.host } ), 3 );
+	}
+
 	global.openConfig = function(){
 		var settings_win = gui.Window.open( 'settings.html', {
 			"position": "center",
