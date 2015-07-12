@@ -27,12 +27,11 @@ body{
     flex-direction:column;
 }
 
-#drop:hover, .hover{
-	color: #fff;
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+
+#drop.hover{
 	border-color: #55c2e4;
 }
-
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 
 .hover > img{
 	content: url("../img/send_arrow_active.svg");
